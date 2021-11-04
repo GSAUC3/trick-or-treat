@@ -26,18 +26,18 @@ pg.mixer.music.play(-1)
 WIN=pg.display.set_mode((1280,720))
 
 # Load images 
-BACK=pg.image.load('assets/back.png')
+BACK=pg.image.load('images/back.png')
 
-WEB=pg.image.load('assets/web.png')
-BAT=pg.image.load('assets/bat.png')
-PUMPKIN=pg.transform.scale(pg.image.load('assets/pumpkin.png'),(90,90))
-GHOST=pg.transform.scale(pg.image.load('assets/ghost.png'),(60,92))
+WEB=pg.image.load('images/web.png')
+BAT=pg.image.load('images/bat.png')
+PUMPKIN=pg.transform.scale(pg.image.load('images/pumpkin.png'),(90,90))
+GHOST=pg.transform.scale(pg.image.load('images/ghost.png'),(60,92))
 
-CANDY1=pg.image.load('assets/candy1.png')
-CANDY2=pg.image.load('assets/candy2.png')
-CANDY3=pg.image.load('assets/candy3.png')
-CANDY4=pg.image.load('assets/candy4.png')
-BUGS=pg.image.load('assets/bugs.png')
+CANDY1=pg.image.load('images/candy1.png')
+CANDY2=pg.image.load('images/candy2.png')
+CANDY3=pg.image.load('images/candy3.png')
+CANDY4=pg.image.load('images/candy4.png')
+BUGS=pg.image.load('images/bugs.png')
 
 
 def collide(obj1,obj2):
