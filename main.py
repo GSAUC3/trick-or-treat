@@ -30,6 +30,7 @@ BACK=pg.image.load('images/back.png')
 
 PUMPKIN=pg.transform.scale(pg.image.load('images/pumpkin.png'),(90,90))
 GHOST=pg.transform.scale(pg.image.load('images/ghost.png'),(60,92))
+WEB=pg.transform.scale(pg.image.load('images/web.png'),(90,90))
 
 CANDY1=pg.image.load('images/candy1.png')
 CANDY2=pg.image.load('images/candy2.png')
@@ -147,15 +148,17 @@ def main():
         
 
     bugs = Player(630,360)
-    #
+    # this will go to the left
     p_left=General(1200,30,PUMPKIN)
     g_left=General(1280,330,GHOST)
+    webl=General(1200,360,WEB)
     c1l=General(1480,600,CANDY1)
     c2l=General(1380,230,CANDY2)
     c3l=General(1280,130,CANDY3)
     c4l=General(1580,530,CANDY4)
 
     g_right=General(0,300,GHOST)
+    webr=General(-120,460,WEB)
     p_right=General(-10,600,PUMPKIN)
     c1r=General(-20,600,CANDY1)
     c2r=General(-30,230,CANDY2)
@@ -164,12 +167,14 @@ def main():
 
     g_down=General(300,50,GHOST)
     p_down=General(200,30,PUMPKIN)
+    webd=General(120,46,WEB)
     c1d=General(800,-50,CANDY1)
     c2d=General(600,-150,CANDY2)
     c3d=General(500,0,CANDY3)
     c4d=General(1000,-25,CANDY4)
 
     
+    webu=General(1120,460,WEB)
     g_up=General(300,750,GHOST)
     p_up=General(200,950,PUMPKIN)
     c1u=General(800,1250,CANDY1)
@@ -179,12 +184,12 @@ def main():
 
     
 
-    rightwalla=[g_right,p_right,c1r,c2r,c3r,c4r]
-    leftwalla=[p_left,g_left,c1l,c2l,c3l,c4l]
-    downwalla=[p_down,g_down,c1d,c2d,c3d,c4d]
-    upwalla=[p_up,g_up,c1u,c2u,c3u,c4u]
+    rightwalla=[webr,g_right,p_right,c1r,c2r,c3r,c4r]
+    leftwalla=[webl,p_left,g_left,c1l,c2l,c3l,c4l]
+    downwalla=[webd,p_down,g_down,c1d,c2d,c3d,c4d]
+    upwalla=[webu,p_up,g_up,c1u,c2u,c3u,c4u]
     ELEMENTS = set(rightwalla + leftwalla + downwalla + upwalla)
-    ENEMY=set([g_up,g_down,g_left,g_right,p_down,p_up,p_left,p_right])
+    ENEMY=set([g_up,g_down,g_left,g_right,p_down,p_up,p_left,p_right,webu,webl,webr,webd])
     FOOD=ELEMENTS-ENEMY
 
 
@@ -242,19 +247,19 @@ def main():
         for i in ENEMY:
             if collide(bugs,i):
                 lives-=1
-                if i in [p_up,g_up]:
+                if i in [p_up,g_up,webu]:
                     pochat.play()
                     i.reset('up')
                     bugs.reset()
-                if i in [p_down,g_down]:
+                if i in [p_down,g_down,webd]:
                     pochat.play()
                     i.reset('down')
                     bugs.reset()
-                if i in [p_left,g_left]:
+                if i in [p_left,g_left,webl]:
                     pochat.play()
                     i.reset('left')
                     bugs.reset()
-                if i in [p_right,g_right]:
+                if i in [p_right,g_right,webr]:
                     pochat.play()
                     i.reset('right')
                     bugs.reset()
