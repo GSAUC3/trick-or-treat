@@ -28,8 +28,6 @@ WIN=pg.display.set_mode((1280,720))
 # Load images 
 BACK=pg.image.load('images/back.png')
 
-WEB=pg.image.load('images/web.png')
-BAT=pg.image.load('images/bat.png')
 PUMPKIN=pg.transform.scale(pg.image.load('images/pumpkin.png'),(90,90))
 GHOST=pg.transform.scale(pg.image.load('images/ghost.png'),(60,92))
 
