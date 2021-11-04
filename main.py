@@ -16,12 +16,12 @@ pg.init()
 
 pg.display.set_caption('TRICK OR TREAT')
 
-bugs_dies=pg.mixer.Sound('assets/mariodies.wav')
-game_over_sound=pg.mixer.Sound('assets/jumpsonenemy.wav')
-pochat=pg.mixer.Sound('assets/pochat.mp3')
+bugs_dies=pg.mixer.Sound('sounds/mariodies.wav')
+game_over_sound=pg.mixer.Sound('sounds/jumpsonenemy.wav')
+pochat=pg.mixer.Sound('sounds/pochat.mp3')
 
 
-MUSIC=pg.mixer.music.load('assets/halloween.mp3')
+MUSIC=pg.mixer.music.load('sounds/halloween.mp3')
 pg.mixer.music.play(-1)
 WIN=pg.display.set_mode((1280,720))
 
