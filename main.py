@@ -220,17 +220,20 @@ def main():
                 bugs_dies.play()
                 lost_label=gameoverfont.render('GAME OVER',1,(255,255,255))
                 WIN.blit(lost_label,(250,300))
+                on_screen=SCOREfont.render(f'Your score: {candies_collected} Highest Score: {backend.get_score()}',
+                1,(191, 255, 0) )
+                WIN.blit(on_screen,(100,100))
             else:
                 bugs_dies.play()
                 lost_label=gameoverfont.render('GAME OVER',1,(255,255,255))
                 WIN.blit(lost_label,(250,300))
-                highscore=SCOREfont.render(f'NEW HIGH SCORE!!! {candies_collected}',1,(30, 144, 255))
+                highscore=SCOREfont.render(f'NEW HIGH SCORE!!! {candies_collected}',1,(191, 255, 0))
                 WIN.blit(highscore,(250,100))
                 backend.updatescore(candies_collected)
             
             
             pg.display.update()
-            time.sleep(3)
+            time.sleep(5)
             on=False
 
         for e in pg.event.get():
