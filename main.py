@@ -2,6 +2,7 @@ import pygame as pg
 import time
 import random
 from random import randrange
+import backend
 
 '''
 Author: Rajarshi Banerjee
@@ -57,7 +58,7 @@ class Player:
     
     def reset(self):
         self.x=1280>>1
-        self.y>>1
+        self.y=720>>1
         
     def get_width(self):
         return BUGS.get_width()
@@ -132,6 +133,7 @@ def main():
     lives=3
     candies_collected=0
     font=pg.font.SysFont('comicsans',30)
+    SCOREfont=pg.font.SysFont('comicsans',100)
     x,y=3,3
     gameoverfont=pg.font.SysFont('chalkduster.ttf',200)
     clock= pg.time.Clock()
@@ -214,9 +216,19 @@ def main():
       
 
         if lives<=0:
-            bugs_dies.play()
-            lost_label=gameoverfont.render('GAME OVER',1,(255,255,255))
-            WIN.blit(lost_label,(250,300))
+            if backend.get_score()>=candies_collected:
+                bugs_dies.play()
+                lost_label=gameoverfont.render('GAME OVER',1,(255,255,255))
+                WIN.blit(lost_label,(250,300))
+            else:
+                bugs_dies.play()
+                lost_label=gameoverfont.render('GAME OVER',1,(255,255,255))
+                WIN.blit(lost_label,(250,300))
+                highscore=SCOREfont.render(f'NEW HIGH SCORE!!! {candies_collected}',1,(30, 144, 255))
+                WIN.blit(highscore,(250,100))
+                backend.updatescore(candies_collected)
+            
+            
             pg.display.update()
             time.sleep(3)
             on=False
