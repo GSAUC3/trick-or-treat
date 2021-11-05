@@ -1,5 +1,5 @@
 import pygame as pg
-import time
+import time,os,sys
 import random
 from random import randrange
 import backend
@@ -17,26 +17,26 @@ pg.init()
 
 pg.display.set_caption('TRICK OR TREAT')
 
-bugs_dies=pg.mixer.Sound('sounds/mariodies.wav')
-game_over_sound=pg.mixer.Sound('sounds/jumpsonenemy.wav')
-pochat=pg.mixer.Sound('sounds/pochat.mp3')
+bugs_dies=pg.mixer.Sound(os.path.join('sounds','mariodies.wav'))
+game_over_sound=pg.mixer.Sound(os.path.join('sounds','jumpsonenemy.wav'))
+pochat=pg.mixer.Sound(os.path.join('sounds','pochat.mp3'))
 
-
-MUSIC=pg.mixer.music.load('sounds/halloween.mp3')
+MUSIC=pg.mixer.music.load(os.path.join('sounds','halloween.mp3'))
 pg.mixer.music.play(-1)
+
 WIN=pg.display.set_mode((1280,720))
 
 # Load images 
 BACK=pg.image.load('images/back.png')
 
-PUMPKIN=pg.transform.scale(pg.image.load('images/pumpkin.png'),(90,90))
-GHOST=pg.transform.scale(pg.image.load('images/ghost.png'),(60,92))
-WEB=pg.transform.scale(pg.image.load('images/web.png'),(90,90))
+PUMPKIN=pg.transform.scale(pg.image.load(os.path.join('images','pumpkin.png')),(90,90))
+GHOST=pg.transform.scale(pg.image.load(os.path.join('images','ghost.png')),(60,92))
+WEB=pg.transform.scale(pg.image.load(os.path.join('images','web.png')),(90,90))
 
-CANDY1=pg.image.load('images/candy1.png')
-CANDY2=pg.image.load('images/candy2.png')
-CANDY3=pg.image.load('images/candy3.png')
-CANDY4=pg.image.load('images/candy4.png')
+CANDY1=pg.image.load(os.path.join('images','candy1.png'))
+CANDY2=pg.image.load(os.path.join('images','candy2.png'))
+CANDY3=pg.image.load(os.path.join('images','candy3.png'))
+CANDY4=pg.image.load(os.path.join('images','candy4.png'))
 BUGS=pg.image.load('images/bugs.png')
 
 
