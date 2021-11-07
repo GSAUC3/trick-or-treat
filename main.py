@@ -133,7 +133,7 @@ def main():
     lives=3
     candies_collected=0
     font=pg.font.SysFont('comicsans',30)
-    SCOREfont=pg.font.SysFont('comicsans',100)
+    SCOREfont=pg.font.SysFont('comicsans',80)
     x,y=3,3
     gameoverfont=pg.font.SysFont('chalkduster.ttf',200)
     clock= pg.time.Clock()
@@ -216,13 +216,19 @@ def main():
       
 
         if lives<=0:
+            try:
+                if backend.get_score():
+                    pass
+            except:
+                backend.insert(candies_collected)
+
             if backend.get_score()>=candies_collected:
                 bugs_dies.play()
                 lost_label=gameoverfont.render('GAME OVER',1,(255,255,255))
                 WIN.blit(lost_label,(250,300))
                 on_screen=SCOREfont.render(f'Your score: {candies_collected} Highest Score: {backend.get_score()}',
                 1,(191, 255, 0) )
-                WIN.blit(on_screen,(100,100))
+                WIN.blit(on_screen,(250,100))
             else:
                 bugs_dies.play()
                 lost_label=gameoverfont.render('GAME OVER',1,(255,255,255))
