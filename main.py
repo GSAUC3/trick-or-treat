@@ -27,8 +27,8 @@ pg.mixer.music.play(-1)
 WIN=pg.display.set_mode((1280,720))
 
 # Load images 
-BACK=pg.image.load('images/back.png')
-
+BACK=pg.image.load(os.path.join('images','back.png'))
+MENUBACK=pg.image.load(os.path.join('images','menuback.png'))
 PUMPKIN=pg.transform.scale(pg.image.load(os.path.join('images','pumpkin.png')),(90,90))
 GHOST=pg.transform.scale(pg.image.load(os.path.join('images','ghost.png')),(60,92))
 WEB=pg.transform.scale(pg.image.load(os.path.join('images','web.png')),(90,90))
@@ -301,8 +301,8 @@ def main_menu():
     title_font = pg.font.SysFont("comicsans", 70)
     run = True
     while run:
-        WIN.blit(BACK, (0,0))
-        title_label = title_font.render("Press the mouse to begin...", 1, (255,255,255))
+        WIN.blit(MENUBACK, (0,0))
+        title_label = title_font.render("Press the SPACE or mouse to begin...", 1, (255,255,255))
         WIN.blit(title_label, (1280/2 - title_label.get_width()/2, 350))
         pg.display.update()
         for event in pg.event.get():
@@ -310,6 +310,11 @@ def main_menu():
                 run = False
             if event.type == pg.MOUSEBUTTONDOWN:
                 main()
+            if event.type==pg.KEYDOWN:
+                if event.key==pg.K_SPACE:
+                    main()
+                if event.key==pg.K_ESCAPE:
+                    run=False
     pg.quit()
    
 
