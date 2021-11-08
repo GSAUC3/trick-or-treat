@@ -297,7 +297,21 @@ def main():
         
         pg.display.update()
 
-    
+def main_menu():
+    title_font = pg.font.SysFont("comicsans", 70)
+    run = True
+    while run:
+        WIN.blit(BACK, (0,0))
+        title_label = title_font.render("Press the mouse to begin...", 1, (255,255,255))
+        WIN.blit(title_label, (1280/2 - title_label.get_width()/2, 350))
+        pg.display.update()
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                run = False
+            if event.type == pg.MOUSEBUTTONDOWN:
+                main()
+    pg.quit()
+   
 
 if __name__ == '__main__':
-    main()
+    main_menu()
