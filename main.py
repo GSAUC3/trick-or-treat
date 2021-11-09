@@ -303,7 +303,9 @@ def main_menu():
     while run:
         WIN.blit(MENUBACK, (0,0))
         title_label = title_font.render("Press the SPACE or mouse to begin...", 1, (255,255,255))
-        WIN.blit(title_label, (1280/2 - title_label.get_width()/2, 350))
+        exit_label = title_font.render("Press the ESC to Exit", 1, (255,255,255))
+        WIN.blit(title_label, (1280/2 - title_label.get_width()/2, 250))
+        WIN.blit(exit_label, (1280/2 - exit_label.get_width()/2, 350))
         pg.display.update()
         for event in pg.event.get():
             if event.type == pg.QUIT:
