@@ -12,6 +12,11 @@
 
 #### Video <a href="https://youtu.be/0lBQmbWjouM">link</a> Sound effects included
 
+### Click the picture below
+
+[![Watch the video](https://github.com/GSAUC3/trick-or-treat/blob/master/images/menuback.png)](https://youtu.be/0lBQmbWjouM)
+
+
 ### Author 
 ```
 Rajarshi Banerjee
