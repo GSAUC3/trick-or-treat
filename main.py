@@ -1,5 +1,5 @@
 import pygame as pg
-import time,os,sys
+import time,os
 import random
 from random import randrange
 import backend
