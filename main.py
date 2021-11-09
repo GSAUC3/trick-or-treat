@@ -37,7 +37,7 @@ CANDY1=pg.image.load(os.path.join('images','candy1.png'))
 CANDY2=pg.image.load(os.path.join('images','candy2.png'))
 CANDY3=pg.image.load(os.path.join('images','candy3.png'))
 CANDY4=pg.image.load(os.path.join('images','candy4.png'))
-BUGS=pg.image.load('images/bugs.png')
+BUGS=pg.image.load(os.path.join('images','bugs.png'))
 
 
 def collide(obj1,obj2):
