@@ -21,7 +21,7 @@ pip install pygame
 
 ### Click the picture below
 
-[![Watch the video](https://github.com/GSAUC3/trick-or-treat/blob/master/images/menuback.png)](https://youtu.be/0lBQmbWjouM)
+[![Watch the video](https://github.com/GSAUC3/trick-or-treat/blob/master/images/menuback.png)](https://www.youtube.com/watch?v=9VIwfmw4zy0)
 
 
 ### Author 
